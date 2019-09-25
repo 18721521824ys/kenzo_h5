@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <meta content="yes" name="apple-mobile-web-app-capable"> -->
+  <title>KenzoParfums凯卓</title>
+</head>
+<script>
+  if (/Android (\d+\.\d+)/.test(navigator.userAgent)) { var version = parseFloat(RegExp.$1); if (version > 2.3) { var phoneScale = parseInt(window.screen.width) / 640; document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ", maximum-scale = " + phoneScale + ', target-densitydpi=device-dpi">') } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">') } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">') };
+  // var phoneScale = parseInt(window.screen.width) / 640;
+  // document.write('<meta name="viewport" content="width=640" user-scalable=no>');
+  // var status = 0;
+  // var tokenID = "123456";
+  var status = "{$status}";
+  var tokenID = "{$token}";
+  var imgSrc = "__IMG__";
+</script>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/swiper.min.js"></script>
+
+<link rel="stylesheet" href="__CSS__/swiper.min.css">
+<link rel="stylesheet" href="__CSS__/main.css?V=1.3">
+<link rel="stylesheet" href="__CSS__/base.css?V=1.0">
+
+<body>
+  <div class="index-wrap">
+    <div class="loading page">
+      <img src="__IMG__/sy-bg.png" class="bg_loading">
+      <canvas id="canvas" width="640" height="1290"></canvas>
+      <p id="jd">0%</p>
+      <div class="loading-index">
+        <p>loading</p>
+        <div class="omit"><em>.</em><em>.</em><em>.</em></div>
+      </div>
+    </div>
+    <div class="index">
+      <div class="index-box swiper-container swiper-container-vertical">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box_1 allowSlidePrev">
+            <div class="main-box">
+              <img src="__IMG__/first.png" alt="" />
+              <div class="logo">
+                <img src="__IMG__/first_logo.png" alt="" />
+              </div>
+              <div class="title ant1">
+                <img src="__IMG__/first_title.png" alt="" />
+              </div>
+              <div class="new">
+                <img src="__IMG__/first_new.png" alt="" />
+              </div>
+              <div class="word">
+                <img src="__IMG__/first_word1.png" alt="" />
+              </div>
+              <div class="jiantou ant2">
+                <img src="__IMG__/first_ball.png?v=111" alt="" />
+              </div>
+              <div class="ball-word">
+                <img src="__IMG__/ball-word1.png" alt="" />
+              </div>
+              <!--活动规则-->
+              <div class="click"></div>
+              <div class="bomb">
+                <img src="__IMG__/fist_pellet.png" alt="" />
+                <div class="close"></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide box_2">
+            <div class="main-boxs canvas2-bg">
+              <canvas id="canvas2" width="640" height="1290"></canvas>
+              <div class="two_title1 ant1 ">
+                <img src="__IMG__/two_all.png" alt="" />
+              </div>
+              <div class="two_title2 ant1 ">
+                <img src="__IMG__/two_all1.png" alt="" />
+              </div>
+              <div class="two_button ">
+                <img src="__IMG__/button_1.png" alt="" />
+              </div>
+              <div class="two_button  btn_shadow">
+              </div>
+              <div class="two_pic">
+                <img src="__IMG__/two_word2.png" alt="" />
+              </div>
+              <div class="two_pict">
+                <img src="__IMG__/two_picter1.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="three_game page" style="display: none;">
+      <div class="ball">
+        <canvas id="canvas3" width="243" height="243"></canvas>
+        <div class="ball1"></div>
+        <canvas id="canvas4" width="180" height="183"></canvas>
+        <div class="ball2"></div>
+        <canvas id="canvas5" width="186" height="192"></canvas>
+        <div class="ball3"></div>
+        <div class="ball-img"><img src="__IMG__/three_word.png" alt="" /></div>
+      </div>
+      <div class="index_max">
+        <div class="three_word">
+          <img src="__IMG__/three_shade.png" alt="" />
+        </div>
+        <div class="three_btn">
+          <img src="__IMG__/three_btn.png" alt="" />
+        </div>
+      </div>
+    </div> 
+    <div class="four_result page" style="display: none;">
+      <div class="form_box">
+        <img src="__IMG__/form_title.png" class="form_title" />
+        <div class="input_">
+          <div class="t">姓&nbsp;&nbsp;&nbsp;&nbsp;名</div>
+          <input type="text" class="name" placeholder="请输入姓名">
+        </div>
+        <div class="input_">
+          <div class="t">联系方式</div>
+          <input type="text" class="mobile" placeholder="请输入11位手机号码">
+        </div>
+        <div class="little_word one">请填写正确的联系方式</div>
+        <div class="code_box">
+          <div class="input_">
+            <div class="t">输入验证码</div>
+            <input type="text" class="password" maxlength="6" placeholder="输入验证码">
+          </div>
+          <button class="codeBtn">获取验证码</button>
+        </div>
+        <div class="input_">
+          <div class="t">寄送地址</div>
+          <input type="text" class="address" placeholder="输入寄送地址">
+        </div>
+        <div class="little_word two">请填写正确的寄送地址</div>
+        <div class="rule_2">
+          <div class="radio_icon">
+            <img src="__IMG__/radio2.png"  class="radioOne">
+            <img src="__IMG__/radio1.png "  class="radioTwo">
+          </div>
+          <div class="radio_text">
+            我已阅读并同意Kenzo Parfums凯卓的<span class="pr">隐私保护政策/条款</span>
+          </div>
+        </div>
+        <div class="form_submit">点击提交</div>
+      </div>
+      <div class="form_al">
+          <img src="__IMG__/form_al.png" alt="" />
+      </div>
+      <div class="form_al1">
+        <img src="__IMG__/form_al1.png" alt="" />
+      </div>
+      <div class="form_al2">
+        <img src="__IMG__/form_al2.png" alt="" />
+      </div>
+      <!--隐私保护政策/条款-->
+      <div class="privacy">
+        <div class="privacy-border">
+          <img src="__IMG__/pr-close.png" alt="" class="privacy-cl">
+          <div class="privacy-title">隐私政策</div>
+          <div class="privacy-title1">
+            <h3> 本个人信息保护政策（以下简称“隐私政策”）适用于路威酩轩香水化妆品（上海）有限公司及LVMH Fragrance Brands旗下的Kenzo
+              Parfums（下称“Kenzo”或“我们”）在您通过各种平台包括但不限于Kenzo官方微信或微博等Kenzo授权渠道（以下统称“平台”）参与【KENZO愉悦津姜焕肤微珠系列产品线上小样申领项目（下称“项目”）】或与您互动时所收集的所有个人信息。请阅读以下隐私政策，以了解您向我们提供及共享的个人信息、我们将如何收集、使用、保存并保护您提供给我们的个人信息、您如何管理该等个人信息以及如何与我们就个人信息进行联系。通过访问本平台或使用我们的任一服务，即表示您充分理解和同意接受本隐私政策的全部内容，并且信赖我们对您提供并共享的个人信息的使用和处理方式。Kenzo尊重您的隐私，并将尽力确保您的个人信息得到妥善保护。
+            </h3>
+
+            本隐私政策详细描述了Kenzo收集和使用个人信息的方式，以及您对个人信息所享有的权利。<br/><br />
+
+            因此，为了尊重和保护平台用户（以下简称“用户”）的隐私，Kenzo承诺在平台内收集和处理的信息均遵守所有适用于个人信息保护的法律及法规的有关要求。
+
+
+            <h3>条款1 - 所收集数据范围和方式</h3>
+
+            Kenzo可能会收集和处理有关您的以下信息，进行以下条款2中所描述的用途，并且是为了向您提供服务所必需。这些均是您自愿提供的信息：<br /><br />
+
+            - 联络信息，包括姓名、地址、电话号码；<br />
+            - 您在公开场合、或我们的社交媒体页面、或我们的平台上发表的公开信息，例如对某一产品的评论；<br />
+            - 人口统计信息，例如您的性别、生日的信息；<br />
+            - 您访问本平台的详细信息，包括流量数据、 位置数据、 网络日志与其他通信数据<br />
+
+            在下列的情况下，Kenzo会要求您提供您的个人资料:<br /><br />
+
+            -参与推广活动或平台提供的其他功能；<br />
+            -要求获取产品目录；<br />
+
+
+            <h3>条款2 - 所收集数据的用途</h3>
+
+            Kenzo将负责对所收集的信息进行自动化处理，主要用于：<br /><br />
+
+            -实现项目的目的如抽奖、客服沟通、寄送产品等；<br />
+            -进行匿名统计和分析等活动。<br /><br />
+
+            我们可能通过您提供给我们的电话或您提供给我们的其它任何联络方式就上述目的与您联络。如果您不愿意收到电话或不愿意进行上述联系， 您可按照下文条款7的联络方式与我们联络。
+
+
+            <h3> 条款3 - 数据保存期限</h3>
+
+            平台会将收集的数据保存一段时间，该期限不会超过所收集数据的用途所需的期限。<br /><br />
+
+            <h3>条款4 - 数据接收方</h3>
+
+            为了上述条款2所述的目的，我们可能会与位于中国大陆境内或境外的关联公司分享您的个人信息。另外，为了运营本平台或提供服务，我们还会将您的个人信息在必要范围内提供给我们的合作伙伴、服务提供商、供货商以及其他支持或协助我们提供相关产品和服务的第三方，无论其位于中国大陆境内或境外。<br /><br />
+
+            另外，如果我们认为，为执行我们的服务条款或为保护另一Kenzo的客户、公众或Kenzo的权利、财产或人身安全，有必要披露您的个人资料，我们将披露您的个人资料。<br /><br />
+
+            请注意，我们亦可以使用海外设施处理或备份资料。因此，我们可能将您的个人资料转移到我们的海外设施作存储。但是，这样做并不会改变我们对保护您的隐私权所作的承诺。<br /><br />
+
+            除本隐私政策另行规定以外，
+            我们只会在下列的情况下未经您允许而披露特定的资料：因法律要求而披露该等资料；或者，我们诚实地认为，为调查针对我们的客户、使用者、关联方或财产（包括本平台）或他人所进行的可疑刑事活动，或为确保其免受该等活动的损害，有必要披露该等资料。<br /><br />
+
+
+            <h3> 条款5 - 数据安全与保密</h3>
+
+            Kenzo已采用了多种有效预防措施，以尽力确保所收集个人信息的保密和安全，并防止信息篡改、毁损、丢失或被未经授权的第三方访问。<br /><br />
+
+            但是， 本平台的使用者须注意， 由于互联网的开放性质， 我们无法保证我们服务器上存储的、 或在使用者之间传送的您的任何个人资料不会被未获准许地查阅， 并且， 我们声明， 如果任何数据或通信被盗窃或丢失、
+            未获准许地被查阅或受损，
+            或被截取，
+            我们对此不承担任何责任。 通过使用本平台， 即表示您确认您理解并同意承担这些风险。<br /><br />
+
+            除非事先取得您的同意， 否则， 我们不会向上文第4条所述的任何第三方出租、 交易、 分发或出售您提供给我们的任何个人资料。<br /><br />
+
+
+            <h3>条款6 - 数据统计</h3>
+
+            为了使平台的内容与服务能够更贴合用户需求， Kenzo会统计用户的浏览次数、访问页面数量、平台浏览活动以及回访频率。为了完成此类访问分析， Kenzo会使用不同的分析工具。该工具可用来分析平台的访问状况。<br /><br />
+
+
+            <h3>条款7 - 存取、拒绝和修改的权限</h3>
+
+            您有权查阅、更正、修改（出于合法目的）或反对与您个人信息有关的处理操作。如果您需要查阅、更正、修改（出于合法目的）或删除您的个人信息，您可以联系KenzoParfums凯卓官方微博或者微信客服人员，除非我们因法律原因而需要保存该等资料。<br /><br />
+
+            请理解，为防止假冒，在操作您的个人信息前我们需要核实您的身份。一旦核实我们将在合理的期限内回复您的请求。<br /><br />
+
+
+            <h3> 条款8 - 公司控制权变更时的数据转移</h3>
+
+            在出现公司控制权变更或公司资产或业务被转让的情况下， Kenzo收集的个人信息可能会被转移。<br /><br />
+
+
+            <h3>条款9 - 儿童隐私权</h3>
+
+            如果您未满18岁，您只能在父母或监护人的参与下使用本平台而且不应向我们提交任何个人资料。<br /><br />
+
+
+            <h3>条款10- 本隐私政策的修改</h3>
+
+            Kenzo有权在不预先通知的情况下，随时修改本隐私政策的内容。在这种情况下，Kenzo会通过在平台上发布更新版本的方式通知您。自该隐私政策更新版本发布之日起，如您仍继续使用平台或我们的服务，即表示您同意受经修订的隐私政策的约束。<br /><br />
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--中奖二维码-->
+    <div class="qrcode page " style="display: none;">
+      <img src="__IMG__/share.png" class="share" />
+      <div class="qrcode_box forin">
+        <div class="tt">提交成功！</div>
+        <div class="text">奖品将于10月8日后陆续寄出</div>
+        <div class="qrcode_img"><img src="__IMG__/qrcode.jpg" class="" /></div>
+        <div class="text2">长按二维码<br>
+          “爆”出更多小“肌”密</div>
+      </div>
+    </div>
+    <!--未中奖二维码-->
+    <div class="qrcode1 page " style="display: none;">
+      <div class="foot">
+        <img src="__IMG__/share.png" class="share" />
+        <div class="qrcode_box forin">
+          <div class="tt1">很遗憾</div>
+          <div class="tt1">有活力的你没有中奖...</div>
+          <div class="text">别灰心！等候下次惊喜来临！</div>
+          <div class="qrcode_img"><img src="__IMG__/qrcode3.png" class="" /></div>
+          <div class="text2">长按二维码<br>
+            “爆”出更多小“肌”密</div>
+        </div>
+      </div>
+    </div>
+    <!--已参与二维码-->
+    <div class="qrcode2 page " style="display: none;">
+      <div class="foot">
+        <img src="__IMG__/share.png" class="share" />
+        <div class="qrcode_box forin">
+          <div class="tt1">你已参与互动</div>
+          <div class="tt1" style="margin-left: 20px;">期待下次惊喜吧！</div>
+          <div class="qrcode_img"><img src="__IMG__/qrcode1.png" class="" /></div>
+          <div class="text2">长按二维码<br>
+            “爆”出更多小“肌”密</div>
+        </div>
+      </div>
+    </div>
+    <!--活动已经结束-->
+    <div class="qrcode3 page " style="display: none;">
+      <div class="foot">
+        <img src="__IMG__/share.png" class="share" />
+        <div class="qrcode_box forin">
+          <div class="tt1">啊哦!来晚一步</div>
+          <div class="tt1">此次活动礼品已全部抽完</div>
+          <div class="qrcode_img"><img src="__IMG__/qrcode2.png" class="" /></div>
+          <div class="text2">长按二维码<br>
+            “爆”出更多小“肌”密</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="mask"></div>
+
+  <script src="__JS__/loading.js?v=1.0"></script>
+  <script src="__JS__/main.js?v={$number}"></script>
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script>
+    wx.config({
+      debug: false,
+      appId: '{$signPackage.appId}',
+      timestamp: '{$signPackage.timestamp}',
+      nonceStr: '{$signPackage.nonceStr}',
+      signature: '{$signPackage.signature}',
+      jsApiList: [
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'hideMenuItems',
+        'showMenuItems',
+        'hideAllNonBaseMenuItem',
+        'showAllNonBaseMenuItem'
+      ]
+    })
+    var shareData64 = {
+      title: '小样申领 | 5000份新品“爆珠CP”等你来“尝”！',
+      desc: '抽取KENZO愉悦津姜新品小样，爆出肌肤鲜活力',
+      imgUrl: 'https://cdn.max-digital.cn/H5/kenzoki/ginger/share.png',
+      link: '{$share_link}',
+      success: function () {
+
+      }
+    }
+    wx.ready(function () {
+      //默认显示
+      wx.onMenuShareAppMessage(shareData64)
+      wx.onMenuShareTimeline(shareData64)
+      wx.onMenuShareQZone(shareData64)
+      wx.onMenuShareWeibo(shareData64)
+      wx.onMenuShareQQ(shareData64)
+    })
+
+  //        let vConsole = new VConsole();
+  </script>
+</body>
+
+</html>

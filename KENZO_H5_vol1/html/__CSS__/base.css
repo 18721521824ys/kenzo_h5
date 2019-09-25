@@ -1,0 +1,58 @@
+@charset "UTF-8";
+html, body, img, div, p, span, img {
+  padding: 0;
+  margin: 0;
+  border: 0; 
+}
+html, body{
+ height: 100vh;
+  min-height: 1010px; 
+  overflow: hidden;
+}
+
+input, select {
+    background: transparent;
+    padding-left: 22px;
+    font-size: 20px;
+    
+}
+
+input{color:#fff;}
+input::-webkit-input-placeholder{color:#fff;}
+
+textarea, select, input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+}
+input{
+ opacity: 0.7;
+font-size: 18px;
+padding: 0;
+}
+button {
+    outline: none;
+    border: none;
+    padding: 0;
+    border: 0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+input, select {
+    background: transparent;
+    padding-left: 35px;
+    font-size: 28px;
+}
